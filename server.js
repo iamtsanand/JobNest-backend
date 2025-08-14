@@ -11,7 +11,6 @@ dotenv.config();
 
 const app = express();
 
-// Assuming your profile pictures are stored in `uploads/profile_pictures`
 const __dirname = path.resolve(); // for ESModules
 
 app.use('/api/uploads/resumes', express.static(path.join(__dirname, 'public/uploads/resumes')));
@@ -19,7 +18,7 @@ app.use('/api/uploads/resumes', express.static(path.join(__dirname, 'public/uplo
 app.use('/api/uploads/profile_pictures', express.static(path.join(__dirname, 'public/uploads/profile_pictures')));
 
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGIN, // Replace with the correct frontend URL if needed
+    origin: process.env.ALLOWED_ORIGIN,
     credentials: true,
   }));
 
